@@ -1,0 +1,26 @@
+.busqueda {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-input {
+  font-family: "Muli", sans-serif;
+  font-size: 17px;
+  border: 2px solid white;
+  border-radius: 30px;
+  height: 40px;
+  width: 70%;
+  padding: 2px 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+  margin-top: 25px;
+  outline: none;
+  color: white;
+}
+
+::placeholder {
+  color: white;
+  margin: auto;
+}

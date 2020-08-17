@@ -1,0 +1,70 @@
+.mi-lista-home {
+  padding: 30px 0 0 30px;
+  font-size: 19px;
+}
+
+.carrusel-contenedor {
+  width: 100%;
+  white-space: nowrap;
+  margin: 70px 0px 0px 0;
+  padding-bottom: 60px;
+}
+
+.carrusel {
+  box-sizing: border-box;
+  width: 100%;
+  overflow: hidden;
+  padding: 0 30px;
+  position: relative;
+}
+
+.carrusel-item {
+  background-color: black;
+  border-radius: 25px;
+  height: 250px;
+  width: 200px;
+  overflow: hidden;
+  display: inline-block;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: 450ms all;
+  transform-origin: center left;
+  position: relative;
+}
+
+.carrusel-item:hover ~ .carrusel-item {
+  transform: translate3d(100px, 0, 0);
+}
+
+.carrusel-contenedor:hover .carrusel-item {
+  opacity: 0.3;
+}
+
+.carrusel-contenedor:hover .carrusel-item:hover {
+  transform: scale(1.5);
+  opacity: 1;
+}
+
+.details {
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.9) 0%,
+    rgba(0, 0, 0, 0) 110%
+  );
+  font-size: 15px;
+  position: absolute;
+  transition: opacity 450ms;
+  opacity: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10px;
+}
+
+.carrusel-item:hover .details {
+  opacity: 1;
+}
+
+.carrusel--img--details img {
+  width: 15%;
+}
