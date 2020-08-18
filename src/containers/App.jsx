@@ -19,6 +19,30 @@ const App = () => {
           <CarruselItem />
           <CarruselItem />
           <CarruselItem />
+          <CarruselItem />
+          <CarruselItem />
+          <CarruselItem />
+          <CarruselItem />
+          <CarruselItem />
+          <CarruselItem />
+        </Carrusel>
+
+        <Carrusel titulo="Tendencias">
+          <CarruselItem />
+          <CarruselItem />
+          <CarruselItem />
+          <CarruselItem />
+          <CarruselItem />
+          <CarruselItem />
+        </Carrusel>
+
+        <Carrusel titulo="Recomendado">
+          <CarruselItem />
+          <CarruselItem />
+          <CarruselItem />
+          <CarruselItem />
+          <CarruselItem />
+          <CarruselItem />
         </Carrusel>
       </main>
     </div>
