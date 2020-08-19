@@ -1,14 +1,11 @@
 import React from "react";
+import propTypes from "prop-types";
 
-const CarruselItem = () => {
+const CarruselItem = ({ cover, title, year, contentRating, duration }) => {
   return (
     <>
       <div className="carrusel-item">
-        <img
-          src="https://images.pexels.com/photos/4171211/pexels-photo-4171211.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
-          alt=""
-          width="100%"
-        />
+        <img className="carousel-item__img" src={cover} alt="" />
         <div className="details">
           <div className="carrusel--img--details">
             <img
@@ -20,12 +17,21 @@ const CarruselItem = () => {
               src="https://img.icons8.com/flat_round/64/000000/play--v1.png"
             />
           </div>
-          <p>Titulo Descriptivo</p>
-          <p>2019 +16 114 min</p>
+          <p>{title}</p>
+          <p>{`${year} ${contentRating} ${duration}min`}</p>
         </div>
       </div>
     </>
   );
+};
+
+// eslint-disable-next-line react/no-typos
+CarruselItem.propTypes = {
+  cover: propTypes.string,
+  title: propTypes.string,
+  year: propTypes.number,
+  contentRating: propTypes.string,
+  duration: propTypes.number,
 };
 
 export default CarruselItem;

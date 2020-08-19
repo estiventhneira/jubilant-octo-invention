@@ -12,3 +12,10 @@ body {
 .body-login {
   background: linear-gradient(#21c08b, #8f57fd);
 }
+
+.carousel-item__img {
+  width: 200px;
+  height: 250px;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
