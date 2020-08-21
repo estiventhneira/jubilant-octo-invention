@@ -7,7 +7,7 @@ import useInitialState from "../hooks/useInitialState";
 import "../assets/styles/App.scss";
 import Carrusel from "../components/Carrusel";
 
-const App = () => {
+const Home = () => {
   const InitialState = useInitialState("http://localhost:3000/initialState");
   return (
     <div className="App">
@@ -41,4 +41,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default Home;
