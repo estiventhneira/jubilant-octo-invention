@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Home from "../containers/Home";
 import Register from "../containers/Register";
 import Login from "../containers/Login";
+import NotFound from "../containers/NotFound";
 
 const App = () => (
   <BrowserRouter>
@@ -10,6 +11,7 @@ const App = () => (
       <Route exact path="/" component={Home} />
       <Route exact path="/register" component={Register} />
       <Route exact path="/login" component={Login} />
+      <Route component={NotFound} />
     </Switch>
   </BrowserRouter>
 );
