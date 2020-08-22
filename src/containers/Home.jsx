@@ -1,5 +1,4 @@
 import React from "react";
-import Header from "../components/Header";
 import Search from "../components/Search";
 import CarruselItem from "../components/CarruselItem";
 import useInitialState from "../hooks/useInitialState";
@@ -10,8 +9,7 @@ import Carrusel from "../components/Carrusel";
 const Home = () => {
   const InitialState = useInitialState("http://localhost:3000/initialState");
   return (
-    <div className="App">
-      <Header />
+    <>
       <main>
         <Search />
         {InitialState.mylist.length > 0 && (
@@ -37,7 +35,7 @@ const Home = () => {
           ))}
         </Carrusel>
       </main>
-    </div>
+    </>
   );
 };
 

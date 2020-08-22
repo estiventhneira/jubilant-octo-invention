@@ -1,5 +1,6 @@
 import React from "react";
 import "../assets/styles/LoginStyles.scss";
+import { Link } from "react-router-dom";
 
 const Login = () => (
   <main className="body-login login-main">
@@ -12,9 +13,11 @@ const Login = () => (
           placeholder="Contraseña"
           type="password"
         />
-        <button className="form-button" type="button">
-          <a href="home.html">Inicia Seccion</a>
-        </button>
+        <Link className="Link" to="/">
+          <button className="form-button" type="button">
+            <a href="home.html">Inicia Seccion</a>
+          </button>
+        </Link>
         <div className="form-details">
           <div>
             <input type="checkbox" name="recuerdame" id="recuerdame" />
@@ -26,17 +29,17 @@ const Login = () => (
       <div className="rrss">
         <div className="rrss-wrapper">
           <img src="img/google-icon.webp" alt="" />
-          <a href="www.google.com">Registrate con Google</a>
+          <a href="https://www.google.com">Registrate con Google</a>
         </div>
         <div className="rrss-wrapper">
           <img src="img/twitter-icon.webp" alt="" />
-          <a href="www.twitter.com">Registrate con Twitter</a>
+          <a href="https://www.twitter.com">Registrate con Twitter</a>
         </div>
       </div>
       <section className="sign-up">
         <p>
           ¿Aún no tienes cuenta?
-          <a href="signup.html">¡Registrate!</a>
+          <Link to="/register">¡Registrate!</Link>
         </p>
       </section>
     </section>

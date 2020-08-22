@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import googleIcon from "../assets/static/google-icon.webp";
 import twitterIcon from "../assets/static/twitter-icon.webp";
 import "../assets/styles/LoginStyles.scss";
@@ -17,23 +18,25 @@ const SignUp = () => {
               placeholder="Contraseña"
               type="password"
             />
-            <button className="form-button" type="button">
-              <a href="home.html">Registrate</a>
-            </button>
+            <Link className="Link" to="/">
+              <button className="form-button" type="button">
+                <a href="home.html">Registrate</a>
+              </button>
+            </Link>
             <div className="rrss">
               <div className="rrss-wrapper">
                 <img src={googleIcon} alt="" />
-                <a href="www.google.com">Registrate con Google</a>
+                <a href="https://www.google.com">Registrate con Google</a>
               </div>
               <div className="rrss-wrapper">
                 <img src={twitterIcon} alt="" />
-                <a href="www.twitter.com">Registrate con Twitter</a>
+                <a href="https://www.twitter.com">Registrate con Twitter</a>
               </div>
             </div>
             <section className="sign-up">
               <p>
                 ¿Ya tienes cuenta?
-                <a href="login.html">Entra aquí</a>
+                <Link to="/login">Entra aquí</Link>
               </p>
             </section>
           </form>
