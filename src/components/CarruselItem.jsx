@@ -1,7 +1,28 @@
 import React from "react";
 import propTypes from "prop-types";
 
-const CarruselItem = ({ cover, title, year, contentRating, duration }) => {
+// redux
+import { connect } from "react-redux";
+import { setFavorite, deleteFavorite } from "../actions";
+
+import deleteIcon from "../assets/static/remove-icon_a56b8107-2c02-49ed-bead-308031b0dd76.webp";
+
+const CarruselItem = (props) => {
+  const { cover, title, year, contentRating, duration, id, isList } = props;
+  const handleSetFavorite = () => {
+    props.setFavorite({
+      cover,
+      title,
+      year,
+      contentRating,
+      duration,
+      id,
+    });
+  };
+
+  const handledeleteFavorite = (id) => {
+    props.deleteFavorite(id);
+  };
   return (
     <>
       <div className="carrusel-item">
@@ -9,13 +30,23 @@ const CarruselItem = ({ cover, title, year, contentRating, duration }) => {
         <div className="details">
           <div className="carrusel--img--details">
             <img
-              alt="Plus Bottom"
-              src="https://img.icons8.com/flat_round/64/000000/plus.png"
-            />
-            <img
-              alt="Plus Bottom"
+              alt="Play Bottom"
               src="https://img.icons8.com/flat_round/64/000000/play--v1.png"
             />
+
+            {isList ? (
+              <img
+                alt="Delete Bottom"
+                src={deleteIcon}
+                onClick={() => handledeleteFavorite(id)}
+              />
+            ) : (
+              <img
+                onClick={handleSetFavorite}
+                alt="Plus Bottom"
+                src="https://img.icons8.com/flat_round/64/000000/plus.png"
+              />
+            )}
           </div>
           <p>{title}</p>
           <p>{`${year} ${contentRating} ${duration}min`}</p>
@@ -34,4 +65,9 @@ CarruselItem.propTypes = {
   duration: propTypes.number,
 };
 
-export default CarruselItem;
+const mapDispatchToProps = {
+  setFavorite,
+  deleteFavorite,
+};
+
+export default connect(null, mapDispatchToProps)(CarruselItem);
