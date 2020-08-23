@@ -1,13 +1,12 @@
 import React from "react";
+import { connect } from "react-redux";
 import Search from "../components/Search";
 import CarruselItem from "../components/CarruselItem";
-import useInitialState from "../hooks/useInitialState";
 
 import "../assets/styles/App.scss";
 import Carrusel from "../components/Carrusel";
 
 const Home = () => {
-  const InitialState = useInitialState("http://localhost:3000/initialState");
   return (
     <>
       <main>
@@ -39,4 +38,12 @@ const Home = () => {
   );
 };
 
-export default Home;
+const mapStateToProps = (state) => {
+  return {
+    mylist: state.mylist,
+    trends: state.trends,
+    originals: state.originals,
+  };
+};
+
+export default connect(mapStateToProps, null)(Home);
