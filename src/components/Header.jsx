@@ -1,10 +1,22 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+
 import "../assets/styles/Components/Header.scss";
 import logo from "../assets/static/logo-platzi-video-BW2.png";
 import userIcon from "../assets/static/icons8-usuario-círculo-64.png";
 
-const Header = () => {
+import gravatar from "../utils/gravatar";
+import { logoutRequest } from "../actions/index";
+
+const Header = (props) => {
+  const { user } = props;
+  const hasUser = Object.keys(user).length > 0;
+
+  const handleLogout = () => {
+    props.logoutRequest({});
+  };
+
   return (
     <header className="header">
       <Link className="Link" to="/">
@@ -12,23 +24,35 @@ const Header = () => {
       </Link>
       <div className="header__nav">
         <div className="header__nav--profile">
-          <img alt="perfil" src={userIcon} />
+          {hasUser ? (
+            <img alt="perfil" src={gravatar(user.email)} />
+          ) : (
+            <img alt="perfil" src={userIcon} />
+          )}
+
           <p>Perfil</p>
         </div>
         <div className="header__ul">
           <ul>
-            <li>
-              <a
-                href="https://www.google.co.ve/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Cuenta
-              </a>
-            </li>
-            <li>
-              <Link to="/login">Iniciar Sección</Link>
-            </li>
+            {hasUser ? (
+              <li>
+                <a
+                  href="https://www.google.com.ve/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {user.email}
+                  <br />
+                </a>
+                <a href="/#logout" onClick={handleLogout}>
+                  Cerrar Sesión
+                </a>
+              </li>
+            ) : (
+              <li>
+                <Link to="/login">Iniciar Sección</Link>
+              </li>
+            )}
           </ul>
         </div>
       </div>
@@ -36,4 +60,14 @@ const Header = () => {
   );
 };
 
-export default Header;
+const mapStateToProps = (state) => {
+  return {
+    user: state.user,
+  };
+};
+
+const mapDispatchToProps = {
+  logoutRequest,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header);
