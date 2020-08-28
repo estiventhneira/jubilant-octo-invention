@@ -3,6 +3,7 @@ import propTypes from "prop-types";
 
 // redux
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 import { setFavorite, deleteFavorite } from "../actions";
 
 import deleteIcon from "../assets/static/remove-icon_a56b8107-2c02-49ed-bead-308031b0dd76.webp";
@@ -29,10 +30,12 @@ const CarruselItem = (props) => {
         <img className="carousel-item__img" src={cover} alt="" />
         <div className="details">
           <div className="carrusel--img--details">
-            <img
-              alt="Play Bottom"
-              src="https://img.icons8.com/flat_round/64/000000/play--v1.png"
-            />
+            <Link to={`/player/${id}`}>
+              <img
+                alt="Play Bottom"
+                src="https://img.icons8.com/flat_round/64/000000/play--v1.png"
+              />
+            </Link>
 
             {isList ? (
               <img

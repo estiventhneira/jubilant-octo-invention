@@ -17,3 +17,8 @@ export const logoutRequest = (payload) => ({
   type: "LOGOUT_REQUEST",
   payload,
 });
+
+export const videoRequest = (payload) => ({
+  type: "VIDEO_REQUEST",
+  payload,
+});
