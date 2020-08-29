@@ -3,6 +3,7 @@ import React from "react";
 import { connect } from "react-redux";
 import Search from "../components/Search";
 import CarruselItem from "../components/CarruselItem";
+import Header from "../components/Header";
 
 import "../assets/styles/App.scss";
 import Carrusel from "../components/Carrusel";
@@ -10,6 +11,7 @@ import Carrusel from "../components/Carrusel";
 const Home = ({ mylist, trends, originals }) => {
   return (
     <>
+      <Header />
       <main>
         <Search />
         {mylist.length > 0 && (

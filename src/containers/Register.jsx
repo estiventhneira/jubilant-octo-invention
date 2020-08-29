@@ -4,6 +4,8 @@ import googleIcon from "../assets/static/google-icon.webp";
 import twitterIcon from "../assets/static/twitter-icon.webp";
 import "../assets/styles/LoginStyles.scss";
 
+import Header from "../components/Header";
+
 const SignUp = () => {
   const [form, setValues] = useState({
     email: "",
@@ -25,6 +27,7 @@ const SignUp = () => {
 
   return (
     <>
+      <Header isRegister />
       <main className="body-login login-main">
         <section className="login">
           <h2>Registrate</h2>

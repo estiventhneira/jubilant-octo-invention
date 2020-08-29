@@ -1,9 +1,11 @@
 import React from "react";
 import "../assets/styles/NotFound.scss";
+import Header from "../components/Header";
 
 const NotFound = () => {
   return (
     <>
+      <Header />
       <main className="error">
         <section>
           <h3>página no encontrada</h3>
