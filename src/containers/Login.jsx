@@ -78,6 +78,7 @@ const Login = (props) => {
           <section className="sign-up">
             <p>
               ¿Aún no tienes cuenta?
+              {"  "}
               <Link to="/register">¡Registrate!</Link>
             </p>
           </section>
